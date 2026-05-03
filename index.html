@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REFF Create | 動画クリエイター</title>
+
+    <!-- Google Fonts: Inter & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP Core & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <a href="#" class="logo">REFF Create</a>
+        <nav class="nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#works" class="nav-link">Works</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content wrapper for smooth scrolling -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Hero Section -->
+            <section id="hero" class="hero">
+                <div class="hero-bg" style="background-image: url('images/hero_video_camera_1774321617133.png');"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">REFF Create</h1>
+                    <p class="hero-subtitle">Shooting videos and photos and editing</p>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about section-pad">
+                <div class="container">
+                    <h2 class="section-title">About Creator</h2>
+                    <div class="about-grid">
+                        <div class="about-image">
+                            <div class="img-wrap">
+                                <img src="images/about_img.jpg" alt="Creator Profile">
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <p style="font-size: 1.2rem; margin-bottom: 2em; letter-spacing: 0.05em;"><strong>代表：井上 史美（いのうえ ふみ）</strong></p>
+                            <p style="margin-bottom: 2em; line-height: 2;">
+                                <span style="font-weight: 700; display: block; margin-bottom: 0.3em; font-size: 1.1rem;">2022年5月</span>
+                                自営業の夫が自社の紹介の為YouTubeチャンネルを開設。<br>
+                                それをきっかけに独学で動画撮影と編集を始める。<br>
+                                週１投稿を2年間続け、チャンネルの収益化にも成功。
+                            </p>
+                            <p style="margin-bottom: 2.5em; line-height: 2;">
+                                <span style="font-weight: 700; display: block; margin-bottom: 0.3em; font-size: 1.1rem;">2025年1月</span>
+                                REFF Createを立ち上げる
+                            </p>
+                            <p style="font-weight: 700; font-size: 1.15rem; line-height: 1.8; letter-spacing: 0.05em;">
+                                YouTube動画の総製作本数は300本以上！<br>
+                                現在6社のYouTubeチャンネルを運用中
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Works Section -->
+            <section id="works" class="works section-pad bg-dark">
+                <div class="container">
+                    <h2 class="section-title color-white">Works</h2>
+                    <ul class="works-list">
+                        <li class="works-item">
+                            <a href="https://youtu.be/YFf3VoM7ioQ?si=YGeq_Nm7E8poy6ql" class="works-link" target="_blank">だいとうオープンファクトリーCONTACT<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/@%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E6%95%99%E8%82%B2%E6%94%AF%E6%8F%B4%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF" class="works-link" target="_blank">esccoキャリア教育支援ネットワーク<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/@revolt_custom_cycles1" class="works-link" target="_blank">REVOLT CUSTOM CYCLES<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/@hiroel_0007" class="works-link" target="_blank">ヒロエルドットコム<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/@lilymonozukurivillage" class="works-link" target="_blank">リリーものづくりビレッジ農業＆IT/eスポーツ<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/@NARASAKIHOUSING" class="works-link" target="_blank">NARASAKI HOUSING<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/shorts/mzekWklrnIg" class="works-link" target="_blank">Shorts 1<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.youtube.com/shorts/ULStrqx-ugA" class="works-link" target="_blank">Shorts 2<span class="arrow">→</span></a>
+                        </li>
+                        <li class="works-item">
+                            <a href="https://www.instagram.com/reels/DITjVfpzEuO/" class="works-link" target="_blank">Shorts 3<span class="arrow">→</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Editorial Image Gallery (Parallax) -->
+            <section class="editorial-gallery">
+                <div class="gallery-text">
+                    <h3>EVERY FRAME<br>TELLS A STORY.</h3>
+                    <p>1フレームに宿る、心を動かす物語。</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-item item-left">
+                        <img src="images/camera.jpg" alt="Camera Equipment">
+                    </div>
+                    <div class="gallery-item item-right">
+                        <img src="images/monitor.jpg" alt="Editing Monitor">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="pricing section-pad">
+                <div class="container text-center">
+                    <h2 class="section-title">Pricing</h2>
+                    <p class="pricing-desc">動画撮影、動画編集の料金プランにつきましては、<br>以下のPDF資料より詳細をご確認いただけます。</p>
+                    
+                    <div class="pdf-container">
+                        <!-- PDFを開くためのボタン -->
+                        <a href="pricing.pdf" target="_blank" class="pdf-btn">
+                            料金表を見る (PDF)
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section-pad">
+                <div class="container text-center">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="contact-desc">映像制作のご依頼、ご相談はお気軽にお問い合わせください。</p>
+                    
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="お名前 / Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="メールアドレス / Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容 / Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" onclick="event.preventDefault(); alert('現在はフロントエンドのみのデザインデモです。送信機能を実装する場合はシステムと連携させてください。');">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer Illustration -->
+            <footer class="footer-illust">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/reffcreate_videoeditor/" target="_blank" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+                <img src="images/footer_illust.png" alt="Video Camera Illustration">
+                <a href="#" class="footer-logo">REFF Create</a>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

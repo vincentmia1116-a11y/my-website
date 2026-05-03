@@ -1,0 +1,494 @@
+/* =========================================================================
+   Base Variables & Resets
+   ========================================================================= */
+:root {
+    --color-bg: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-accent: #E63946; /* アクセントの赤色 */
+    --color-gray: #F5F5F7;
+    --color-dark-gray: #333333;
+    
+    --font-en: 'Inter', "Helvetica Neue", Arial, sans-serif;
+    --font-jp: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    
+    --header-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: initial; /* Managed by Lenis */
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-en);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================================================================
+   Header & Navigation
+   ========================================================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: #fff;
+    pointer-events: none; /* Let clicks pass to content unless it's a link */
+}
+
+.header .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    pointer-events: auto;
+}
+
+.header .nav {
+    display: flex;
+    gap: 5px; /* メニューの各文字（ABOUTとWORKSなど）の間隔を狭く */
+    pointer-events: auto;
+}
+
+.nav-link {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em; /* ABOUT などの1文字ずつの間隔も引き締める */
+    position: relative;
+    padding: 8px 12px; /* カプセルボタン風の余白も小さくしてタイトに */
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-link::after {
+    display: none; /* remove old underline effect */
+}
+
+.nav-link:hover {
+    background-color: #ffffff;
+    color: var(--color-accent);
+    border-color: #ffffff;
+}
+
+/* =========================================================================
+   Lenis Global Styles
+   ========================================================================= */
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* =========================================================================
+   Layout & Utilities
+   ========================================================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.section-pad {
+    padding: 150px 0;
+}
+.bg-dark {
+    background-color: var(--color-dark-gray);
+    color: var(--color-bg);
+}
+.color-white {
+    color: var(--color-bg);
+}
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 900;
+}
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   Hero Section
+   ========================================================================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35) grayscale(100%); /* 視認性を上げるために背景をより暗く */
+    z-index: -1;
+}
+.hero-content {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); /* 文字に影をつけて背景画像から浮き立たせる */
+}
+.hero-title {
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.hero-catchcopy {
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    font-weight: 500;
+}
+
+/* =========================================================================
+   About Section
+   ========================================================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.img-wrap {
+    overflow: hidden;
+}
+.img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.8s ease;
+}
+.img-wrap:hover img {
+    filter: grayscale(0%);
+}
+.about-text p {
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+/* =========================================================================
+   Works Section (Text Interactive List)
+   ========================================================================= */
+.works-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.works-item {
+    margin-bottom: 20px;
+}
+.works-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 30px;
+    font-family: var(--font-jp);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-bg);
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.works-link:hover {
+    color: var(--color-dark-gray);
+    background-color: var(--color-bg);
+    transform: scale(1.05) rotate(-2deg);
+    letter-spacing: 0.1em;
+}
+.works-link .arrow {
+    font-size: 1.8rem;
+    font-family: var(--font-en);
+    font-weight: 300;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+.works-link:hover .arrow {
+    transform: translateX(10px);
+    color: var(--color-accent);
+}
+
+/* =========================================================================
+   Editorial Image Gallery
+   ========================================================================= */
+.editorial-gallery {
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-bg);
+}
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 60vh;
+    padding: 0 5%;
+}
+.gallery-text {
+    text-align: center;
+    margin-bottom: 80px;
+    z-index: 3;
+    position: relative; /* 画像と被らない独立したブロックとして配置 */
+}
+.gallery-text h3 {
+    font-size: 4rem;
+    font-family: var(--font-en);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+.gallery-text p {
+    font-size: 1.1rem;
+    font-family: var(--font-jp);
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+.gallery-item {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.8s ease, transform 0.8s ease;
+}
+.gallery-item:hover img {
+    filter: grayscale(0%) contrast(1.1);
+    transform: scale(1.05); /* ホバーすると少し色が出て拡大する */
+}
+.item-left {
+    top: 5%;
+    left: 5%;
+    width: 45%;
+    aspect-ratio: 4/3;
+    z-index: 2;
+}
+.item-right {
+    bottom: 0%;
+    right: 5%;
+    width: 55%;
+    aspect-ratio: 16/9;
+    z-index: 1;
+}
+
+/* =========================================================================
+   Pricing Section
+   ========================================================================= */
+.pricing-desc {
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    line-height: 2;
+}
+.pdf-container {
+    margin-top: 40px;
+}
+.pdf-btn {
+    display: inline-block;
+    padding: 20px 50px;
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    background-color: transparent;
+    border: 2px solid var(--color-text);
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.pdf-btn:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* =========================================================================
+   Contact Form
+   ========================================================================= */
+.contact-desc {
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 0;
+    font-family: var(--font-jp);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom-color: var(--color-accent);
+}
+.submit-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    font-family: var(--font-en);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-bg);
+    background-color: var(--color-text);
+    border: 1px solid var(--color-text);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+.submit-btn:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* =========================================================================
+   Footer Illustration & Social
+   ========================================================================= */
+.footer-illust {
+    text-align: center;
+    padding: 0 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer-illust img {
+    max-width: 450px;
+    height: auto;
+    opacity: 0.9;
+    mix-blend-mode: multiply; /* 画像の白背景を透明化して馴染ませる効果 */
+}
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-top: -80px; /* 画像自体に広い余白があるため、ネガティブマージンで上に詰める */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    position: relative; /* イラストの透明部分にクリック領域を邪魔されないように設定 */
+    z-index: 10;
+}
+.footer-logo:hover {
+    opacity: 0.6;
+}
+.social-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    border-radius: 50%; /* 正円のアイコンボタンにする */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-icon:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media (max-width: 768px) {
+    .header { padding: 0 20px; }
+    .hero-title { font-size: 3.5rem; }
+    .about-grid, .works-grid { grid-template-columns: 1fr; gap: 40px; }
+    .section-pad { padding: 80px 0; }
+    .section-title { font-size: 2.2rem; margin-bottom: 40px; }
+    .contact-email { font-size: 1.8rem; }
+}
